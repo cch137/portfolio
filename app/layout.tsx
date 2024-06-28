@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
@@ -51,9 +51,9 @@ export default function RootLayout({
             </main>
             <footer className="w-full flex items-center justify-center py-3">
               <Link
+                as={NextLink}
                 className="flex items-center gap-1 text-current"
                 href="/"
-                as={NextLink}
               >
                 <div className="text-default-400">{`© ${new Date().getFullYear()} cch137`}</div>
               </Link>

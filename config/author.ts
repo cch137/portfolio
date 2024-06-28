@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 const name = "cch137";
 
 const repos: {

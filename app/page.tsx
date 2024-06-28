@@ -1,11 +1,12 @@
 import { Link } from "@nextui-org/link";
 import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { MdWebAsset, MdLink } from "react-icons/md";
+
+import author from "../config/author";
 
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
-import { MdWebAsset, MdLink } from "react-icons/md";
-import author from "../config/author";
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
                 isExternal
                 href={`https://github.com/${author.name}/${repo}`}
               >
-                <Code color="default" className="text-default-600">
+                <Code className="text-default-600" color="default">
                   <span className="flex gap-1">
                     <GithubIcon size={20} />
                     {author.name}/{repo}
@@ -70,7 +71,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-1">
               {live ? (
                 <Link isExternal href={live}>
-                  <Code color="primary" className="text-xs">
+                  <Code className="text-xs" color="primary">
                     <span className="flex gap-1">
                       <MdWebAsset size={16} />
                       Live demo
@@ -87,11 +88,12 @@ export default function Home() {
                         link?: string;
                       })
                     : tag;
+
                 return (
                   <Code
                     key={i}
-                    color={(color as "") || "default"}
                     className="text-xs text-default-600"
+                    color={(color as "") || "default"}
                   >
                     <span className="flex gap-1">{label}</span>
                   </Code>

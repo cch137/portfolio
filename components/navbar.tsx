@@ -1,30 +1,26 @@
 import {
   Navbar as NextUINavbar,
   NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
+
+import author from "../config/author";
 
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon } from "@/components/icons";
-import author from "../config/author";
-import Image from "next/image";
 
 const navItems: {
   label: string;
   href: string;
 }[] = [];
-const navMenuItems: {
-  label: string;
-  href: string;
-}[] = [];
+// const navMenuItems: {
+//   label: string;
+//   href: string;
+// }[] = [];
 
 export const Navbar = () => {
   return (
@@ -33,11 +29,11 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
-              src={author.profile}
               alt={`${author.name}'s profile`}
-              width={32}
-              height={32}
               className="rounded-full"
+              height={32}
+              src={author.profile}
+              width={32}
             />
             <p className="font-bold text-inherit">{author.name}</p>
           </NextLink>
